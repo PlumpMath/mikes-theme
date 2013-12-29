@@ -402,9 +402,9 @@ a:active {
 
 .main-navigation {
 	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
+	display: inline-block;
+    margin-left: 5em;
+    vertical-align: text-bottom;
 }
 .main-navigation ul {
 	list-style: none;
@@ -414,11 +414,17 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+    padding-right: 2em;
 }
 .main-navigation a {
 	display: block;
 	text-decoration: none;
 }
+
+.main-navigation a:active {
+    color: #000;
+}
+
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	display: none;
@@ -640,7 +646,8 @@ header {
 }
 
 footer {
-    
+    width: 100%;
+    text-align: center;
 }
 
 aside {
@@ -660,7 +667,6 @@ aside {
     margin-left: 0.5em;
     padding-bottom: 0.25em;
     text-align: left;
-    width: 100%;
 }
 
 .site-title a {
@@ -679,23 +685,20 @@ aside {
     display: none;
 }
 
-#menu-main-menu {
+#menu-main_menu {
     margin: 0 auto;
     text-align: center;
     min-width: 50%;
 }
    
-#menu-main-menu li {
-	margin-right: 1em;
-}
 
-#menu-main-menu li a {
+#menu-main_menu li a {
 	color: gray;
     font-family: 'Arapey', serif;
     font-size: 1.125em;
 }
 
-#menu-main-menu li a:hover {
+#menu-main_menu li a:hover {
     color: black;
 }
 

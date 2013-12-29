@@ -26,7 +26,7 @@
 
         <nav id="site-navigation" class="main-navigation" role="navigation">
             <a class="menu-toggle">
-                <img src="<?php echo get_stylesheet_directory_uri() . '/img/menu.svg' ?>" alt="Menu">
+                <img src="<?php echo get_stylesheet_directory_uri() . '/img/menu.svg' ?>" alt="Menu" id="menu-toggle">
             </a>
 			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mikes-theme' ); ?></a>
 
