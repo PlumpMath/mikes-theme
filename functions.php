@@ -12,6 +12,13 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
+if (!is_admin()) add_action("wp_enqueue_scripts", "my_jquery_enqueue", 11);
+function my_jquery_enqueue() {
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js", false, null);
+    wp_enqueue_script('jquery');
+}
+
 if ( ! function_exists( 'mikes_theme_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -80,7 +87,11 @@ function mikes_theme_scripts() {
 
 	wp_enqueue_script( 'mikes-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'mikes-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+    wp_enqueue_script( 'mikes-theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true ); 
+
+    wp_enqueue_script( 'mixitup', get_template_directory_uri() . '/js/jquery.mixitup.min.js', array( 'jquery' ), '1.5.5', true );
+
+    wp_enqueue_script( 'portfolio', get_template_directory_uri() . '/js/portfolio.js', array( 'mixitup'), '20131231', true );        
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -90,6 +101,11 @@ add_action( 'wp_enqueue_scripts', 'mikes_theme_scripts' );
 
 function get_image_directory( $img_dir ) {
     return get_stylesheet_directory_uri() . '/img/';
+}
+
+add_filter( 'jpeg_quality', 'best_quality' );
+function best_quality() {
+    return 100;
 }
 
 /**

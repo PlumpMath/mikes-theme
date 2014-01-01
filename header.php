@@ -21,9 +21,9 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
-	<header id="masthead" class="site-header" role="banner">
-		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
+    <header id="masthead" class="site-header" role="banner">
+        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1> 
+        <img id="map_logo" src="<?php echo get_stylesheet_directory_uri() . '/img/map_logo.jpg'?>">
         <nav id="site-navigation" class="main-navigation" role="navigation">
             <a class="menu-toggle">
                 <img src="<?php echo get_stylesheet_directory_uri() . '/img/menu.svg' ?>" alt="Menu" id="menu-toggle">
@@ -32,6 +32,6 @@
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+    </header><!-- #masthead -->
 
 	<div id="content" class="site-content">

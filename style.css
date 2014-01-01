@@ -403,7 +403,7 @@ a:active {
 .main-navigation {
 	clear: both;
 	display: inline-block;
-    margin-left: 5em;
+    margin-left: 10em;
     vertical-align: text-bottom;
 }
 .main-navigation ul {
@@ -643,6 +643,8 @@ body {
 
 header {
     width: 100%;
+    text-align: center;
+    border-bottom: solid black 2px;
 }
 
 footer {
@@ -661,7 +663,6 @@ aside {
 
 .site-title {
     display: inline-block;
-    font-family: 'Aguafina Script', cursive;
     font-size: 2em;
     padding: 0.5em 0;
     margin-left: 0.5em;
@@ -718,6 +719,87 @@ aside {
     max-width: 1200px;
     margin: 0 auto;
 }
+
+#map_logo {
+    display: none;
+    height: 15em;
+    width: auto;
+    float: left;
+    margin: 1em 0 0 0;
+}
+
+#Grid {
+    text-align: justify;
+    font-size: 0;
+}
+
+#Grid:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+#Grid .break {
+    width: 100%;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#Grid li {
+    display: inline-block;
+    width: 18%;
+    font-size: 11px;
+    margin: 1%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: #ddd;
+    text-align: center;
+    padding: 10px;
+}
+
+#Grid p {
+    margin-top: 10px;
+}
+
+#Grid a {
+    text-decoration: none;
+}
+
+#Grid .mix {
+    opacity: 0;
+    display: none;
+}
+
+.controls {
+    display: block;
+    margin-top: 1em;
+}
+
+.controls h3, .controls ul {
+    display: inline-block;
+}
+
+.controls h3 {
+    font-size: 1.5em;
+}
+
+
+.controls li {
+    list-style: none;
+    border: solid 1px #000;
+    border-radius: 15px;
+    background: #ddd;
+    display: inline-block;
+    padding: 0.5em;
+    margin-left: 0.5em;
+    cursor: pointer; 
+}
+
+.controls li:hover {
+    background: #aaa;
+}
+
 
 @media screen and (max-device-width: 480px) {
     #content {

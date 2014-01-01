@@ -1,0 +1,23 @@
+{
+  "name": "mikes-theme",
+  "version": "0.1.0",
+  "description": "A minimalist Wordpress theme for Michael Allan Photography.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sdroadie/mikes-theme.git"
+  },
+  "author": "Jeremy Neal",
+  "license": "GPL",
+  "bugs": {
+    "url": "https://github.com/sdroadie/mikes-theme/issues"
+  },
+  "homepage": "https://github.com/sdroadie/mikes-theme",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-imagemin": "~0.4.0"
+  }
+}
