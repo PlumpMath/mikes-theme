@@ -378,7 +378,6 @@ a:active {
 .comment-content:before,
 .comment-content:after,
 .site-header:before,
-.site-header:after,
 .site-content:before,
 .site-content:after,
 .site-footer:before,
@@ -401,10 +400,7 @@ a:active {
 ----------------------------------------------- */
 
 .main-navigation {
-	clear: both;
 	display: inline-block;
-    margin-left: 10em;
-    vertical-align: text-bottom;
 }
 .main-navigation ul {
 	list-style: none;
@@ -419,9 +415,13 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+    font-size: 1.2em;
 }
 
-.main-navigation a:active {
+.main-navigation a:visited {
+    color: #ccc;
+}
+.main-navigation a:hover {
     color: #000;
 }
 
@@ -639,6 +639,7 @@ html {
 
 body {
 	height: 100%;
+    font-family: 'Palatino', serif;
 }
 
 header {
@@ -647,7 +648,14 @@ header {
     border-bottom: solid black 2px;
 }
 
+header > * {
+    margin: auto;
+}
+
 footer {
+    position: absolute;
+    bottom: 1em;
+    clear: both;
     width: 100%;
     text-align: center;
 }
@@ -664,14 +672,11 @@ aside {
 .site-title {
     display: inline-block;
     font-size: 2em;
-    padding: 0.5em 0;
-    margin-left: 0.5em;
-    padding-bottom: 0.25em;
-    text-align: left;
 }
 
 .site-title a {
     text-decoration: none;
+    font-family: cursive;
 }
 
 .site-title a:visited {
@@ -695,16 +700,11 @@ aside {
 
 #menu-main_menu li a {
 	color: gray;
-    font-family: 'Arapey', serif;
     font-size: 1.125em;
 }
 
-#menu-main_menu li a:hover {
-    color: black;
-}
-
 .entry-content p {
-	font-family: 'Arapey', cursive;
+	font-family: 'Palatino', cursive;
 }
 
 #comments {
@@ -753,9 +753,8 @@ aside {
     margin: 1%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
-    background: #ddd;
     text-align: center;
-    padding: 10px;
+    padding: 0;
 }
 
 #Grid p {
@@ -772,37 +771,263 @@ aside {
 }
 
 .controls {
-    display: block;
+    margin: 0 auto;
     margin-top: 1em;
+    margin-bottom: 1.5em;
+    text-align: center;
 }
 
 .controls h3, .controls ul {
     display: inline-block;
 }
 
+.controls ul {
+    margin: 0;
+    margin-right: 5em;
+}
+
 .controls h3 {
     font-size: 1.5em;
 }
 
-
 .controls li {
     list-style: none;
-    border: solid 1px #000;
-    border-radius: 15px;
     background: #ddd;
     display: inline-block;
     padding: 0.5em;
     margin-left: 0.5em;
-    cursor: pointer; 
+    cursor: pointer;
+    min-width: 1em;
 }
 
 .controls li:hover {
     background: #aaa;
 }
 
+#social {
+    display: inline-block;
+    margin: 0;
+}
+
+#social li {
+    list-style: none;
+    display: inline-block;
+}
+
+#social li a img {
+    height: 3em;
+    width: auto;
+}
 
 @media screen and (max-device-width: 480px) {
     #content {
         margin: 0 5%;
     }
+}
+
+/*
+ * Lightbox 2 stuff
+ */
+
+/* line 7, ../sass/lightbox.sass */
+body:after {
+  content: url(./img/close.png) url(./img/loading.gif) url(./img/prev.png) url(./img/next.png);
+  display: none;
+}
+
+/* line 11, ../sass/lightbox.sass */
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+}
+
+/* line 20, ../sass/lightbox.sass */
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+}
+/* line 28, ../sass/lightbox.sass */
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 32, ../sass/lightbox.sass */
+.lightbox a img {
+  border: none;
+}
+
+/* line 35, ../sass/lightbox.sass */
+.lb-outerContainer {
+  position: relative;
+  background-color: white;
+  *zoom: 1;
+  height: 45%;
+  width: auto;
+  margin: 0 auto;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+/* line 38, ../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 44, ../sass/lightbox.sass */
+.lb-container {
+  padding: 4px;
+}
+
+/* line 47, ../sass/lightbox.sass */
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0%;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+/* line 56, ../sass/lightbox.sass */
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(./img/loading.gif) no-repeat;
+}
+
+/* line 63, ../sass/lightbox.sass */
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+/* line 71, ../sass/lightbox.sass */
+.lb-container > .nav {
+  left: 0;
+}
+
+/* line 74, ../sass/lightbox.sass */
+.lb-nav a {
+  outline: none;
+}
+
+/* line 77, ../sass/lightbox.sass */
+.lb-prev, .lb-next {
+  width: 49%;
+  height: 100%;
+  cursor: pointer;
+  /* Trick IE into showing hover */
+  display: block;
+}
+
+/* line 84, ../sass/lightbox.sass */
+.lb-prev {
+  left: 0;
+  float: left;
+}
+/* line 87, ../sass/lightbox.sass */
+.lb-prev:hover {
+  background: url(./img/prev.png) left 48% no-repeat;
+}
+
+/* line 90, ../sass/lightbox.sass */
+.lb-next {
+  right: 0;
+  float: right;
+}
+/* line 93, ../sass/lightbox.sass */
+.lb-next:hover {
+  background: url(./img/next.png) right 48% no-repeat;
+}
+
+/* line 96, ../sass/lightbox.sass */
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  -moz-border-radius-bottomleft: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+/* line 38, ../../../../.rvm/gems/ruby-1.9.3-p392/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 103, ../sass/lightbox.sass */
+.lb-data {
+  padding: 0 4px;
+  color: #bbbbbb;
+}
+/* line 106, ../sass/lightbox.sass */
+.lb-data .lb-details {
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+/* line 111, ../sass/lightbox.sass */
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+}
+/* line 115, ../sass/lightbox.sass */
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999;
+}
+/* line 121, ../sass/lightbox.sass */
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  background: url(./img/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+/* line 130, ../sass/lightbox.sass */
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
 }

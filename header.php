@@ -31,7 +31,13 @@
 			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'mikes-theme' ); ?></a>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
+        </nav><!-- #site-navigation -->
+        <ul id="social">
+            <li id="facebook"><a href=""><img src="<?php echo get_stylesheet_directory_uri() . '/img/facebook.png' ?>"/></a></li>
+            <li id="twitter"><a href=""><img src="<?php echo get_stylesheet_directory_uri() . '/img/twitter.png' ?>"/></a></li>
+            <li id="instagram"><a href=""><img src="<?php echo get_stylesheet_directory_uri() . '/img/instagram.png' ?>"></a></li>
+            <li id="email"><a href=""><img src="<?php echo get_stylesheet_directory_uri() . '/img/email.png' ?>"></a></li>
+             
     </header><!-- #masthead -->
 
 	<div id="content" class="site-content">

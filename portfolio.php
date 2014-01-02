@@ -1,12 +1,14 @@
 <?php
 /*
  * Template Name: Portfolio
- * Description: A simple portfolio template that implements the MixItUp library.
+ * Description: A simple portfolio template that implements mixitup (mixitup.io) 
+ * and Lightbox 2 by Lokesh Dhakar (lokeshdhakar.com/projects/lightbox2/).
  */
 
 get_header(); ?>
 
     <div class="controls">
+        <span id="filters">
         <h3>Filter Controls</h3>
         <ul id="filters">
             <li class="filter" data-filter="all">All</li>
@@ -18,13 +20,14 @@ get_header(); ?>
                 }
             ?>
         </ul>
-    </div>
-    <div class="controls">
+        </span>
+        <span id="sorts"> 
         <h3>Sort Controls</h3>
         <ul>
             <li class="sort" data-sort="default" data-order="asc">Default</li>
             <li class="sort" data-sort="random">Randomize</li>
         </ul>
+        </span>
     </div>
 
     <?php while ( have_posts() ) : the_post(); ?>

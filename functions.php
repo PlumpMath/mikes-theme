@@ -93,6 +93,8 @@ function mikes_theme_scripts() {
 
     wp_enqueue_script( 'portfolio', get_template_directory_uri() . '/js/portfolio.js', array( 'mixitup'), '20131231', true );        
 
+    wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/js/lightbox-2.6.min.js', array( 'jquery' ), '2.6', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

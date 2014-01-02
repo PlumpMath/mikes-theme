@@ -32,3 +32,15 @@
 			container.className += ' toggled';
 	};
 } )();
+
+/**
+ * This function handles highlighting the link of the active page on the screen.
+ */
+(function() {
+    var path = document.URL;
+    $(document).find('.menu-item > a').each(function() {
+        if ($(this).attr('href') == path) {
+            $(this).css("color", "#000");
+        }
+    });
+})();
