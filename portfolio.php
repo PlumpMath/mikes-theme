@@ -9,7 +9,7 @@ get_header(); ?>
 
     <div class="controls">
         <span id="filters">
-        <h3>Filter Controls</h3>
+        <h3>Categories</h3>
         <ul id="filters">
             <li class="filter" data-filter="all">All</li>
             <?php
@@ -22,7 +22,7 @@ get_header(); ?>
         </ul>
         </span>
         <span id="sorts"> 
-        <h3>Sort Controls</h3>
+        <h3>Sort</h3>
         <ul>
             <li class="sort" data-sort="default" data-order="asc">Default</li>
             <li class="sort" data-sort="random">Randomize</li>

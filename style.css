@@ -20,6 +20,10 @@ Resetting and rebuilding styles have been helped along thanks to the fine work o
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
+
+Portfolio filtering and sorting is courtesy of mixitup (http://mixitup.io).
+
+Lightbox 2 is courtesy of Lokesh Dhakar's plugin (http://lokeshdhakar.com/projects/lightbox2/
 */
 
 
@@ -406,14 +410,14 @@ a:active {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+    text-align: center;
 }
 .main-navigation li {
-	float: left;
-	position: relative;
-    padding-right: 2em;
+    padding-right: 3em;
+    display: inline;
 }
 .main-navigation a {
-	display: block;
+	display: inline;
 	text-decoration: none;
     font-size: 1.2em;
 }
@@ -644,12 +648,14 @@ body {
 
 header {
     width: 100%;
-    text-align: center;
     border-bottom: solid black 2px;
+    margin-top: 0.5em;
 }
 
 header > * {
-    margin: auto;
+    width: 33%;
+    text-align: center;
+    vertical-align: middle;
 }
 
 footer {
@@ -691,18 +697,6 @@ aside {
     display: none;
 }
 
-#menu-main_menu {
-    margin: 0 auto;
-    text-align: center;
-    min-width: 50%;
-}
-   
-
-#menu-main_menu li a {
-	color: gray;
-    font-size: 1.125em;
-}
-
 .entry-content p {
 	font-family: 'Palatino', cursive;
 }
@@ -718,14 +712,6 @@ aside {
 #content {
     max-width: 1200px;
     margin: 0 auto;
-}
-
-#map_logo {
-    display: none;
-    height: 15em;
-    width: auto;
-    float: left;
-    margin: 1em 0 0 0;
 }
 
 #Grid {
@@ -748,13 +734,11 @@ aside {
 
 #Grid li {
     display: inline-block;
-    width: 18%;
-    font-size: 11px;
-    margin: 1%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     text-align: center;
-    padding: 0;
+    width: 20%;
+    padding: 2%;
 }
 
 #Grid p {
@@ -768,6 +752,10 @@ aside {
 #Grid .mix {
     opacity: 0;
     display: none;
+}
+
+#Grid img {
+    border: solid 3px #000;
 }
 
 .controls {
@@ -806,12 +794,13 @@ aside {
 
 #social {
     display: inline-block;
-    margin: 0;
+    margin: auto;
 }
 
 #social li {
     list-style: none;
     display: inline-block;
+    padding-right: 1em;
 }
 
 #social li a img {
@@ -877,7 +866,7 @@ body:after {
   position: relative;
   background-color: white;
   *zoom: 1;
-  height: 45%;
+  height: 40%;
   width: auto;
   margin: 0 auto;
   -webkit-border-radius: 4px;
